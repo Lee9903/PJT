@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ page import="java.util.*,My.showDTO" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,26 +19,27 @@
 <body>
 	<h4>현지로컬 인기 라멘집</h4>
 	<table>
+	
+		<%
+			List showlist = (List)request.getAttribute("list");
+			for(int i=0; i<showlist.size(); i++){
+				showDTO show = (showDTO)showlist.get(i);
+				out.print("<tr><td>"+show.getImg()+"</td>");
+				out.print("<td><a href=showread?seq_no="+show.getImg()+"'>"
+						 + show.getIname() + "</a></td>");
+				out.print("<td>"+show.getReview()+"</td>");
+				out.print("<td>"+show.getStar()+"</td>");
+				out.print("<td>"+show.getLocation()+"</td></tr>");
+			}
+		%>
 		<tr>
-			<td>사진</td>
-			<td>이름 위치 평점</td>
-		</tr>
-		<tr>
-			<td>사진</td>
-			<td>이름 위치 평점</td>
-		</tr>
-		<tr>
-			<td>사진</td>
-			<td>이름 위치 평점</td>
-		</tr>
-		<tr>
-			<td>사진</td>
-			<td>이름 위치 평점</td>
-		</tr>
-		<tr>
-			<td>사진</td>
-			<td>이름 위치 평점</td>
-		</tr>
+			<td width="600" align="center" colspan="5">
+		<%
+			int rowcnt = (int)request.getAttribute("rowcnt");
+			for(int pcnt=1; pcnt<=rowcnt; pcnt++){%>
+			<a href='Showlist?seq_no=<%=pcnt %>'>[<%=pcnt %>]</a>
+		<%} %>
+			</td>
 	</table>
 	
 	
