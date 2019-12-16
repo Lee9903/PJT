@@ -1,4 +1,4 @@
-package TT;
+package My;
 
 import java.io.IOException;
 
@@ -9,28 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-@WebServlet("/Boardread")
-public class BoardreadServlet extends HttpServlet {
+@WebServlet("/showread")
+public class showreadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String SeqNo = request.getParameter("SEQ_NO");
-		int bno = Integer.parseInt(SeqNo);
-		BoardDTO board = BoardDAO.readDB(bno);
+		String seqno = request.getParameter("seq_no");
 		
-		request.setAttribute("board", board);
-		request.setAttribute("bno", bno);
-		request.setAttribute("target", "boardupdateform");
+		int sno = Integer.parseInt(seqno);
+		
+		showDTO show = showDAO.readDB(sno);
+		
+		request.setAttribute("show", show);
+		request.setAttribute("sno", sno);
+		request.setAttribute("target", "showreadform");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mainindex.jsp");
 		dispatcher.forward(request, response);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
 	}
 
 }
