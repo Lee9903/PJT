@@ -1,4 +1,4 @@
-package My;
+package TT;
 
 public class showDTO {
 	private String sno,img,iname,location,review,star;
