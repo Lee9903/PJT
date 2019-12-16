@@ -1,4 +1,4 @@
-package TT;
+package My;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,22 +11,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
-@WebServlet("/joinlist")
-public class joinlistServlet extends HttpServlet {
+@WebServlet("/Boardlist")
+public class BoardlistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
+	int rowcnt;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
+		String SeqNo = request.getParameter("SEQ_NO");
+		int pageLine=5;
+		int pageNo;
 		
-		List<JoinDto> list = joinDao.readDBList();
-		
+		if(SeqNo!=null)
+			pageNo = Integer.parseInt(SeqNo);
+		else
+			pageNo = 1;
+		List<BoardDTO> list = BoardDAO.readDBList(pageNo);
+		int totalcnt = BoardDAO.totalCnt();
+		if(totalcnt > 0)
+			rowcnt = (int) Math.ceil((double)totalcnt/pageLine);
+		else
+			rowcnt = 0;
 		request.setAttribute("list", list);
-		request.setAttribute("target", "joinlistView");
-		
+		request.setAttribute("rowcnt", rowcnt);
+		request.setAttribute("target", "boardlistV");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mainindex.jsp");
 		dispatcher.forward(request, response);
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
