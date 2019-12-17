@@ -14,7 +14,7 @@ public class showDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from ranking where sno =?";
+		String sql = "select * from ranking natural join menuimg natural join storeintro where sno =?";
 		try {
 			con = DBCon.getCon();
 			ps = con.prepareStatement(sql);
@@ -27,6 +27,16 @@ public class showDAO {
 					show.setLocation(rs.getString("location"));
 					show.setReview(rs.getString("review"));
 					show.setStar(rs.getString("star"));
+					show.setMenu1(rs.getString("menu1"));
+					show.setMenu2(rs.getString("menu2"));
+					show.setMenu3(rs.getString("menu3"));
+					show.setMenu4(rs.getString("menu4"));
+					show.setMenu5(rs.getString("menu5"));
+					show.setIntro1(rs.getString("intro1"));
+					show.setIntro2(rs.getString("intro2"));
+					show.setIntro3(rs.getString("intro3"));
+					show.setIntro4(rs.getString("intro4"));
+					show.setIntro5(rs.getString("intro5"));
 				}
 		}catch(Exception e) {
 			e.printStackTrace();

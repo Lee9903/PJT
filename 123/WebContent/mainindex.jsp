@@ -6,13 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 	<style>
-	#bd{background:#CC3D3D;  background-size:100%;	
+	#bd{/*background:#CC3D3D;*/  background-size:100%;	
 	/*background-image:url(img/201909033.jpg);*/ 
-	background-color:rgba(204,61,61,0.5);
+	/*background-color:rgba(204,61,61,0.5);*/
+	background:#FFFFC6;
 	opacity:0.9;}
 	.content{width:100%; height:90%; position:relative; magin:0;}
-	#footer{width:100%; height:150px; position:absolute; bottom:0; magin:0;}
-	.right{width:100%; height:90%; position:relative; magin:0;}
+	/*#footer{width:100%; height:150px; position:absolute; bottom:0; magin:0;}
+	.right{width:100%; height:90%; position:relative; magin:0;}*/
 	</style>
 </head>
 <body id="bd">

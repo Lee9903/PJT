@@ -12,17 +12,28 @@
 </head>
 <body>
 	
-	<table width="80%" height="80%" align="center" border="1">
+	<table width="80%" height="80%" align="center">
 		<tr>
-			<td rowspan="2"><img src="ramen/${show.getImg() }.jpg"></td>
-			<td colspan="2">${show.getIname() }(~~~)</td>
+			<td colspan="3" align="center">${show.getIname() }</td>
+		</tr>	
+		<tr>
+			<td><img src="menuimg/${show.getMenu1() }.jpg"></td>
+			<td><img src="menuimg/${show.getMenu2() }.jpg"></td>
+			<td><img src="menuimg/${show.getMenu3() }.jpg"></td>
 		</tr>
 		<tr>
-			<td>${show.getStar() }점</td>
-			<td>${show.getReview() }개</td>
+			<td colspan="3">평점 : ${show.getStar() }점</td>
 		</tr>
 		<tr>
-			<td id="tdd" colspan="4" align="center"><iframe frameborder=0 src="ramen/${show.getLocation() }.jsp">위치</iframe></td>
+			<td colspan="3">
+				<div>${show.getIntro1() }</div>
+				<div>${show.getIntro2() }</div>
+				<div>${show.getIntro3() }</div>
+				<div>${show.getIntro4() }</div>
+			</td>
+		</tr>	
+		<tr>
+			<td id="tdd" colspan="4" align="left"><iframe frameborder=0 src="ramen/${show.getLocation() }.jsp">위치</iframe></td>
 	
 		</tr>		
 	</table>

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 	<style>
-	#home{z-index:1; background:#CC3D3D; width:100%; height:100%; position:relative; magin:0;}
+	#home{z-index:1; /*background:#CC3D3D;*/ width:100%; height:100%; position:relative; magin:0;}
 	
 	</style>
 </head>

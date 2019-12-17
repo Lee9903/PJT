@@ -8,16 +8,20 @@
 <title>Insert title here</title>
 	<style>
 		h4{color:#ED0000; font-size:50px; width:100%; }
-		table{opacity:2; width:50%; height:50%;}
+		table{opacity:0.9; width:50%; height:50%; background:#F6F6F6;
+			  font-color:white; }
 		img{width:100%; height:50%; text-align:right;}
-		#td{width:150px;}
+		
+		#td{width:150px; background:#F6F6F6;}
+		#ramen a:link, a:visited{color:#CC3D3D; font-size:20px; font-weigth:bolder;}
+		#ramen a:hover{color:black;}
 	</style>
 	
 </head>
 <body>
 	<h4>현지로컬 인기 라멘집</h4>
 	
-	<table border="1">
+	<table id="ramen">
 		
 		<%
 			List showlist = (List)request.getAttribute("list");

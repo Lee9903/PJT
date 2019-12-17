@@ -6,10 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 	<style>
-		#footer{width:100%; height:50px; clear:both;margin-top:200px; background:black;}
+		#footer{width:100%; height:20px; background:black;
+				position: absolute; left: 0; bottom: 0;
+				margin-top:-150px;
+				position:fixed;}
 	</style>
 </head>
 <body>
-	<h3 id="footer">Since</h3>
+	<h3 id="footer"></h3>
 </body>
 </html>

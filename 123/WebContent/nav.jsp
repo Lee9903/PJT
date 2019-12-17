@@ -8,16 +8,16 @@
 	<style>
 		*{margin:0; padding:0; text-decoration:none;}
 		
-		ul{background:black; opacity:0.95; }
-		li{ display:inline-block; position:relative; }
-		li a{display:inline-block; background:black; color:#CC3D3D;
+		#nav ul{background:black; opacity:0.95; }
+		#nav li{ display:inline-block; position:relative; }
+		#nav li a{display:inline-block; background:black; color:#CC3D3D;
 		 	font-weight:bolder;
 			width:100px; text-align:center; font-size:15px; line-height:80px;}
-		li a { display : inline-block; }
-   		li ul{display:none; position:absolute;}
-   		li:hover ul{display:block; }
-   		li:nth-child(n+4){float:right;}
-   		li a:hover{background:#FFFFFF;}
+		#nav li a { display : inline-block; }
+   		#nav li ul{display:none; position:absolute;}
+   		#nav li:hover ul{display:block; }
+   		#nav li:nth-child(n+4){float:right;}
+   		#nav li a:hover{background:#FFFFFF;}
 	</style>
 </head>
 <body> 
