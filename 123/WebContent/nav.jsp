@@ -25,7 +25,7 @@
 		<ul>
 			<li><a href="home">HOME</a></li>
 			<li><a href="Showlist">소개</a></li>
-			<li><a href="recipeindex.jsp">레시피</a></li>
+			<!-- <li><a href="recipeindex.jsp">레시피</a></li> -->
 			<li><a href="main?target=loginform">로그인</a></li>
 			<li><a href="main?target=acc">회원가입</a></li>
 			<li><a href="joinupdate">회원정보수정</a></li>
